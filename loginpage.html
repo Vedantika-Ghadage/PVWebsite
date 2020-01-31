@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="loginpage.js"></script>
         <style>
           .box{
           width:600px;
@@ -26,6 +27,28 @@
         </style>
     </head>
     <body>
+
+        <script>
+           
+function checklogin()
+{
+    var emailid=documnet.getelementbyID("email").value;
+    var passwd=documnet.getelementbyID("password").value;
+}
+if (emailid=="admin" && passwd=="admin123")
+{
+    console.log("Login Successfull!!");
+    window.location="Homepage.html";
+    return false;
+}
+else{
+    console.log("Incorret EmailID");
+
+} 
+            
+            
+            
+            </script>
       <form>
       <div class="form-group" style="text-align: center;" >
         <div class="box">          
@@ -41,7 +64,7 @@
                             <input type="password" class="form-control" style="text-align: center;" name="password"  id="pswd" placeholder="Enter the Password.">
                           </div>
                         
-                          <button type="button" style="text-align: center;" class="btn btn-success">Login</button>
+                          <button type="button" style="text-align: center;" class="btn btn-success" onclick="checklogin()">Login</button>
          </div>
         </div>
      </form>

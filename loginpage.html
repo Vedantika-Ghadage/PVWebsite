@@ -29,29 +29,48 @@
         </style>
     </head>
     <body>
-
+      <p id="demo"></p>
         <script>
            
-function checklogin()
-{
-    var emailid=document.getelementbyID("email").value;
-    var passwd=document.getelementbyID("password").value;
-}
-if (email=="admin" && password=="admin123")
-{
-    console.log("Login Successfull!!");
-    window.location="Homepage.html";
-    return false;
-}
-else{
-    console.log("Incorret EmailID");
+//function checklogin()
+//{
+    //var emailid=document.getelementbyID("email").value;
+  //  var passwd=document.getelementbyID("password").value;
+//}
+//if (email=="admin" && password=="admin123")
+//{
+    //console.log("Login Successfull!!");
+    //window.location="Homepage.html";
+  //  return false;
+//}
+//else{
+  //  console.log("Incorret EmailID");
 
-} 
-            
-            
+//} 
+
+function validateForm() {
+  var x = document.forms["myForm"]["emailid"].value;
+  var y = document.forms["myForm"]["password"].value;
+  //console.log(x)
+  if (x == "" && y=="") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else if(x=="veda@gmail.com" && y=="veda123"){
+    //document.write(x)
+        return true;
+        document.getElementById("demo").innerHTML=x;
+  }
+  else
+  {
+    alert("Incorrect password");
+    return false;
+
+  }
+}
             
             </script>
-      <form>
+      <form name="myForm" action="UserHomepage.html" method="post" onsubmit="return validateForm()">
       <div class="form-group" style="text-align: center;" >
         <div class="box">          
           <h1>LOGIN</h1>
@@ -66,21 +85,10 @@ else{
                             <input type="password" class="form-control" style="text-align: center;" name="password"  id="pswd" placeholder="Enter the Password.">
                           </div>
                         
-                          <button type="button" style="text-align: center;" class="btn btn-success" onclick="checklogin()">Login</button>
+                          <input type="submit" value="Login" />
          </div>
         </div>
      </form>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
 

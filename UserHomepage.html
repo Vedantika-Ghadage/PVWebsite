@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="bootstrap-4.0.0/dist/css/bootstrap.min.css"></script>
+        <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+
+        <style>
+          body{
+           background-image :url("images3_.jpeg");
+           background-size: cover;
+           background-repeat: no-repeat;
+        } 
+
+        .h1{
+            color: maroon;
+            font-size:xx-large;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+       
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            
+                <h1 style="color: white;">WELCOME USER PAGE</h1>
+        </div>
+	<div id="data"></div>
+	<div id="data1"></div>
+	<script language="JavaScript">
+	function processForm() {
+		var parameters = location.search.substring(1).split("&")
+  		var temp=parameters[0].split("=")
+		var temp1=parameters[1].split("=")
+		//console.log(temp1[1])
+		l=unescape(temp[1])
+		k=unescape(temp1[1])
+		if(l=="veda" && k=="veda123")
+		{
+			document.getElementById("data").innerHTML=l;
+			//document.getElementById("data1").innerHTML=k;
+		}
+		else
+		{
+			alert("false");	
+		}
+ 	 }
+ 	processForm();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @media only screen and (max-width: 600px) {
+        .card {margin:auto}
+        img {
+            width: 50%;
+            height: 50%;
+          }
+          footer{
+            height: 100%;
+            width: 100%;
+        }
+        nav{
+            height: 100%;
+            width: 100%;
+            
+        }
+      
+    }
+    @media only screen and (min-width: 992px) {
+        .card {margin:auto}
+      } 
+      
+      
+  </style>
+</head>
+<body>
+  <nav class="navbar sticky-top navbar-dark bg-dark">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    
+    <a class="navbar-brand" href="#">Metapercept</a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+     
+      
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="margin-top: 1cm;">
+      <button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location.href='aboutUs.html'">Home</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location.href='aboutUs.html'">About Us</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location.href='aboutUs.html'">Contact Us</button>
+      <button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location.href='#'">Register <i class="fa fa-user-circle-o"></i></button>
+      <!--<button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location.href='#'">Login <i class="fa fa-sign-in"></i></button>-->
+      
+    </div>
+   
+</nav>
+
+<div class="abc">
+    <h1>Welcome</h1>
+    <img src="image3.jpg">
+</div>
+
+<footer class="page-footer font-small blue pt-4" style="background-color:#b3fff0;">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+          <h5 class="font-weight-bold" style="border-bottom: solid;display:inline-block;border-bottom-color: #ff9999;padding:0px 0px 10px">Careeres</h5>
+          <p>For current job openings visit our Contact Us page</p>
+        </div>
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <div class="col-md-6 mb-md-0 mb-3">
+          <h5 class="font-weight-bold" style="border-bottom: solid;display:inline-block;border-bottom-color:#ff9999;padding:0px 0px 10px">News & Events</h5>
+          <p>NEWS</p>
+          <p>EVENTS</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="#">Metapercept Technology Services(LLP)</a>
+    </div>
+  </footer>
+</body>
+</html>

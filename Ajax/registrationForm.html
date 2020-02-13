@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @media only screen and (max-width: 600px) {
+      .reg-page {
+        width: 360px;
+        padding: 8% 0 0;
+        /*margin: auto;*/
+        margin-left: 30px;
+      }
+      .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        padding: 45px;
+        text-align: center;
+      }
+      .form input {
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      .form button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+      }
+      .form button:hover,.form button:active,.form button:focus {
+        background: #43A047;
+      }
+  
+      body {
+          background-image: url(image4.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
+      .card {margin:auto}
+  }
+  @media only screen and (min-width: 992px) {
+      .card {margin:auto}
+    } 
+
+    .reg-page {
+      width: 360px;
+      padding: 8% 0 0;
+      /*margin: auto;*/
+      margin-left: 30px;
+    }
+    .form {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      text-align: center;
+    }
+    .form input {
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .form button {
+      text-transform: uppercase;
+      outline: 0;
+      background: #4CAF50;
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+    }
+    .form button:hover,.form button:active,.form button:focus {
+      background: #43A047;
+    }
+
+    body {
+        background-image: url(image4.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <form id="myform">
+      <h2>Registration</h2>
+        <input type="text" placeholder="name" id="name"/>
+        <input type="text" placeholder="email address" id="emailid"/>
+        <input type="password" placeholder="password" id="password"/>
+        <input type="password" placeholder="Confirm password" id="cpassword"/>
+    </form>
+    <form id="form">
+      <h2>Login</h2>
+        <input type="text" placeholder="email address" id="emailidlog"/>
+        <input type="password" placeholder="password" id="passwordlog"/>
+    </form>
+    <button id="loginsubmit">Login</button>
+    <button id="registersubmit">Register</button>
+    <button id="submitbutton">submit</button>
+    <p id="showemail">email</p>
+
+    <p id="showname">name</p>
+  </div>
+
+  <script>
+    /*const myform=document.getElementById('myform');
+
+    myform.addEventListener('submit',function(e){
+      e.preventDefault();
+
+      const formData= new FormData(this);
+
+      fetch('https://crudcrud.com/api/03e1c072d6554dc18f15825d62531d1b/mydatabase',{
+        method:'post',
+        body:formData
+      }).then(function(response){
+        return response.text();
+      }).then(function(text){
+        console.log
+      })
+
+    })*/
+   
+
+    var res = [];
+    $(function(){
+      $("#submitbutton").click(function() {
+          console.log("button work")
+   
+             $.ajax({
+                type: "GET",
+                url: "https://crudcrud.com/api/03e1c072d6554dc18f15825d62531d1b/mydatabase",
+                dataType: "json",
+                success: function(response){
+                  console.log(response)
+                  res=response;
+                  var resname = res[2];
+                  console.log(resname.name);
+                  var newname=resname.name; 
+                  $("#showname").html(newname);
+
+                  var resemail = res[2];
+                  console.log(resemail.email); 
+                  var newemail=resemail.email;
+                  $("#showemail").html(newemail);
+                  
+                },
+                error: function(response){
+                  console.log("Error:" + response);
+                }
+             });
+      });
+     });
+
+     var res1 = [];
+     $(function(){
+       $("#loginsubmit").click(function() {
+           console.log("button work")
+           
+           var emailidlog=document.getElementById('emailidlog').value;
+           var passwordlog=document.getElementById('passwordlog').value;
+           console.log(emailidlog);
+                $.ajax({
+                 type: "GET",
+                 url: "https://crudcrud.com/api/03e1c072d6554dc18f15825d62531d1b/mydatabase",
+                 dataType: "json",
+                 success: function(response){
+                   console.log(response)
+                   res1=response;
+                   for(i=0;i<res1.length;i++){
+                   var resname = res1[i];
+                   if(resname.email==emailidlog){
+                   //alert(resname.email);
+                   window.open("Demo.html");
+                  }
+                  else{
+                  alert("wrong email id")
+                  }
+                   }
+                   
+ 
+                   //var resemail = res1[2];
+                   //console.log(resemail.email); 
+                   
+                   
+                 },
+                 error: function(response){
+                   console.log("Error:" + response);
+                 }
+              });  
+       });
+      });
+
+     $(function(){
+
+      $("#registersubmit").click(function() {
+          console.log("button work")
+          var name=document.getElementById('name').value;
+          var emailid=document.getElementById('emailid').value;
+
+          var sendingObj = {
+            "name":name,
+            "email":emailid
+          }       
+          console.log(sendingObj);
+          
+
+           $.ajax({
+            type: "POST",
+            url: "https://crudcrud.com/api/03e1c072d6554dc18f15825d62531d1b/mydatabase",
+            data: JSON.stringify(sendingObj),
+            contentType: 'application/json',
+            success: function(res) {
+              console.log("data saved");
+          },
+          error: function(res) {
+            console.log(res);
+        }
+          });
+      });     
+     });
+  </script>
+        
+</body>
+</html>
